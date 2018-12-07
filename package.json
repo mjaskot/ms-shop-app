@@ -1,0 +1,8 @@
+{
+  "name": "ms-shop-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mjaskot/ms-shop-app.git",
+  "author": "mjaskot <jaskotmarcin1@gmail.com>",
+  "license": "MIT"
+}
