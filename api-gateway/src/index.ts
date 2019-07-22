@@ -1,17 +1,21 @@
-require("dotenv").config();
 import app from "./app";
 
-const port = process.env.PORT;
+import { logger } from "./misc/Logger";
+import envVariables from "./misc/env.initializer";
 
-if (!port) {
-  throw new Error("'Port' value is missing from environmental variables");
-}
+const chalk = require("chalk");
 
 const bootstrap = async () => {
   try {
-    app.listen(port, () => console.log(`Server listening on port ${port}`));
+    app.listen(envVariables.port, () =>
+      logger.info(
+        `Server is listening on port -> ${chalk.blue.underline.bold(
+          envVariables.port
+        )}`
+      )
+    );
   } catch (err) {
-    console.log(err);
+    logger.error(err);
   }
 };
 
